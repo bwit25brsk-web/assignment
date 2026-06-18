@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap — CET-138</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Bootstrap 5 CDN for the live demo section only -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <style>
+    /* Isolate Bootstrap demo to avoid leaking into our site styles */
+    .bs-demo { all: revert; font-family: var(--font-body); }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="nav-brand" href="../index.html">Risu Kaushal</a>
+      <ul class="nav-links">
+
+         <li><a href="../index.html">Home</a></li>
+        <li><a href="FullStack.html">Full Stack</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+        <li><a href="Bootstrap.html">Bootstrap</a></li>
+        <li><a href="Javascript.html">JavaScript</a></li>
+        
+         
+       
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      
+      <h1>Bootstrap</h1>
+      <p class="subtitle">The world's most popular CSS framework — responsive components, ready to use.</p>
+    </section>
+
+    <!-- Concept -->
+    <section aria-label="Concept" style="margin-bottom:2.5rem;">
+      <p class="section-label">The Concept</p>
+      <h2 class="section-title">What is Bootstrap?</h2>
+
+      <div class="cards-grid-2">
+        <div class="card">
+          <h2>A CSS framework</h2>
+          <p>
+            Bootstrap is a library of pre-built CSS classes and JavaScript components.
+            Instead of writing layout CSS from scratch, you add class names like
+            <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">col-md-6</code>
+            or <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">btn btn-primary</code>
+            and Bootstrap handles the styling.
+          </p>
+          <ul>
+            <li>12-column responsive grid system</li>
+            <li>Pre-styled buttons, forms, badges</li>
+            <li>JavaScript components: modals, dropdowns, carousels</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>When to use it</h2>
+          <p>
+            Bootstrap speeds up development when you need a polished, responsive UI quickly.
+            It's less suitable when you need a highly custom design — every Bootstrap site can
+            look the same without customisation.
+          </p>
+          <ul>
+            <li>Rapid prototyping and admin dashboards</li>
+            <li>Teams where not everyone knows CSS deeply</li>
+            <li>Projects with tight deadlines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live demo -->
+    <section aria-label="Live demo" style="margin-bottom:2.5rem;">
+      <p class="section-label">Live Demo</p>
+      <h2 class="section-title">Bootstrap components in action</h2>
+
+      <div class="card">
+        <div class="demo-box">
+          <h4> Live Demo— Bootstrap 5 loaded from CDN</h4>
+
+          <!-- Bootstrap Navbar -->
+          <div class="bs-demo mb-4">
+            <p style="font-weight:700; color:#145f94; font-size:0.9rem; margin-bottom:0.5rem;">Bootstrap Navbar</p>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-primary rounded">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">CET-138</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bsNav"
+                  aria-controls="bsNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="bsNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Bootstrap Cards -->
+          <div class="bs-demo mb-4">
+            <p style="font-weight:700; color:#145f94; font-size:0.9rem; margin-bottom:0.5rem;">Bootstrap Cards</p>
+            <div class="row g-3">
+              <div class="col-sm-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">HTML</h5>
+                    <p class="card-text">Structure of the web. Semantic markup.</p>
+                    <a href="HTML.html" class="btn btn-primary btn-sm">Learn</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Style, layout, animation.</p>
+                    <a href="CSS.html" class="btn btn-primary btn-sm">Learn</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">JavaScript</h5>
+                    <p class="card-text">Behaviour and interactivity.</p>
+                    <a href="Javascript.html" class="btn btn-primary btn-sm">Learn</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootstrap Modal -->
+          <div class="bs-demo">
+            <p style="font-weight:700; color:#145f94; font-size:0.9rem; margin-bottom:0.5rem;">Bootstrap Modal</p>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#demoModal">
+              Open Modal
+            </button>
+            <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-modal="true" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="demoModalLabel">Bootstrap Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    This is a Bootstrap modal. It handles focus trapping, keyboard (Esc to close),
+                    and ARIA roles automatically — great accessibility out of the box.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Code snippet -->
+        <h3>Code Snippet — Bootstrap card</h3>
+        <pre class="code-block"><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"card"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"card-body"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h5</span> <span class="attr">class</span>=<span class="str">"card-title"</span><span class="tag">&gt;</span>HTML<span class="tag">&lt;/h5&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="str">"card-text"</span><span class="tag">&gt;</span>
+      Structure of the web.
+    <span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="str">"HTML.HTML"</span>
+       <span class="attr">class</span>=<span class="str">"btn btn-primary"</span><span class="tag">&gt;</span>
+      Learn
+    <span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section aria-label="Reflection">
+      <p class="section-label">Reflection</p>
+      <div class="reflection">
+        <div class="label">💭 Reflection</div>
+        <p>
+          Bootstrap is a shortcut with trade-offs. The modal alone saved hours — it handles
+          focus trapping and Esc-key behaviour for free. But the grid system adds many class
+          names to HTML, and the default look is very recognisable. What I'd do differently:
+          override CSS variables to customise the palette early, rather than fighting specificity later.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Risu Kaushal</strong> · Canvas ID: bj19nw · CET-138 Full Stack Development</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmOD6qFIhxQQa0VGJmDKWt8Ivvq" crossorigin="anonymous"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>

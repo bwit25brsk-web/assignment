@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript — CET-138</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="nav-brand" href="../index.html">Risu Kaushal</a>
+      <ul class="nav-links">
+           <li><a href="../index.html">Home</a></li>
+        <li><a href="FullStack.html">Full Stack</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+        <li><a href="Bootstrap.html">Bootstrap</a></li>
+        <li><a href="Javascript.html">JavaScript</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      
+      <h1>JavaScript</h1>
+      <p class="subtitle">The language that makes pages behave — events, DOM, logic, and interactivity.</p>
+    </section>
+
+    <!-- Concept -->
+    <section aria-label="Concept" style="margin-bottom:2.5rem;">
+      <p class="section-label">The Concept</p>
+      <h2 class="section-title">What is JavaScript?</h2>
+
+      <div class="cards-grid-2">
+        <div class="card">
+          <h2>The third layer</h2>
+          <p>
+            HTML structures content, CSS styles it, and JavaScript makes it respond.
+            JS runs directly in the browser — no compilation needed — and can update
+            the page without reloading it.
+          </p>
+          <ul>
+            <li>DOM manipulation: change any element on the page</li>
+            <li>Event listeners: react to clicks, keypresses, scrolls</li>
+            <li>Fetch API: talk to servers asynchronously</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Core concepts</h2>
+          <pre class="code-block"><span class="cmt">// Variables</span>
+<span class="kw">const</span> name = <span class="str">"Manshi"</span>;
+<span class="kw">let</span>   score = 0;
+
+<span class="cmt">// Functions</span>
+<span class="kw">function</span> greet(n) {
+  <span class="kw">return</span> <span class="str">`Hello, ${n}!`</span>;
+}
+
+<span class="cmt">// DOM event</span>
+document
+  .getElementById(<span class="str">"btn"</span>)
+  .addEventListener(<span class="str">"click"</span>, () =&gt; {
+    score++;
+  });</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live demos -->
+    <section aria-label="Live demos" style="margin-bottom:2.5rem;">
+      <p class="section-label">Live Demos</p>
+      <h2 class="section-title">Calculator &amp; Dark Mode Toggle</h2>
+
+      <div class="cards-grid-2">
+
+        <!-- Calculator -->
+        <div class="card">
+          <h2>Calculator</h2>
+          <p>A fully functional calculator built with vanilla JS and the DOM.</p>
+          <div class="demo-box" style="display:flex; justify-content:center; padding:1.2rem 0;">
+            <div class="calc" role="application" aria-label="Calculator">
+              <div class="calc-display" id="calc-display" aria-live="polite" aria-atomic="true">0</div>
+              <div class="calc-row">
+                <button class="calc-btn clr" onclick="calcClear()" aria-label="Clear">C</button>
+                <button class="calc-btn op"  onclick="calcOp('sign')" aria-label="Toggle sign">±</button>
+                <button class="calc-btn op"  onclick="calcOp('%')" aria-label="Percent">%</button>
+                <button class="calc-btn op"  onclick="calcOp('/')" aria-label="Divide">÷</button>
+              </div>
+              <div class="calc-row">
+                <button class="calc-btn" onclick="calcNum('7')">7</button>
+                <button class="calc-btn" onclick="calcNum('8')">8</button>
+                <button class="calc-btn" onclick="calcNum('9')">9</button>
+                <button class="calc-btn op" onclick="calcOp('*')" aria-label="Multiply">×</button>
+              </div>
+              <div class="calc-row">
+                <button class="calc-btn" onclick="calcNum('4')">4</button>
+                <button class="calc-btn" onclick="calcNum('5')">5</button>
+                <button class="calc-btn" onclick="calcNum('6')">6</button>
+                <button class="calc-btn op" onclick="calcOp('-')" aria-label="Subtract">−</button>
+              </div>
+              <div class="calc-row">
+                <button class="calc-btn" onclick="calcNum('1')">1</button>
+                <button class="calc-btn" onclick="calcNum('2')">2</button>
+                <button class="calc-btn" onclick="calcNum('3')">3</button>
+                <button class="calc-btn op" onclick="calcOp('+')" aria-label="Add">+</button>
+              </div>
+              <div class="calc-row">
+                <button class="calc-btn zero" onclick="calcNum('0')">0</button>
+                <button class="calc-btn" onclick="calcNum('.')">.</button>
+                <button class="calc-btn eq" onclick="calcEquals()" aria-label="Equals">=</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark mode toggle -->
+        <div class="card">
+          <h2>Dark Mode Toggle</h2>
+          <p>Switch the demo card between light and dark using a single JS class toggle.</p>
+          <div class="demo-box">
+            <div id="dark-demo">
+              <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+                <span style="font-weight:700; font-size:0.95rem;">🌙 Dark Mode</span>
+                <label class="toggle-switch" aria-label="Toggle dark mode">
+                  <input type="checkbox" id="dark-toggle" onchange="toggleDark()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <p style="font-size:0.9rem;">
+                This card demonstrates a dark mode toggle. The JS adds/removes a class;
+                CSS transitions handle the colour animation smoothly.
+              </p>
+              <p id="dark-status" style="font-size:0.82rem; margin-top:0.5rem; opacity:0.7;">Mode: Light</p>
+            </div>
+          </div>
+
+          <h3>Code Snippet</h3>
+          <pre class="code-block"><span class="kw">const</span> toggle = document
+  .getElementById(<span class="str">'dark-toggle'</span>);
+<span class="kw">const</span> card   = document
+  .getElementById(<span class="str">'dark-demo'</span>);
+
+toggle.addEventListener(<span class="str">'change'</span>, () =&gt; {
+  card.classList.toggle(
+    <span class="str">'dark-on'</span>,
+    toggle.checked
+  );
+});</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Accessibility -->
+    <section aria-label="Accessibility" style="margin-bottom:2rem;">
+      <p class="section-label">Accessibility</p>
+      <div class="card">
+        <h2>♿ Accessibility decisions</h2>
+        <ul>
+          <li>Calculator buttons have <code>aria-label</code> attributes for screen readers (÷ vs "Divide")</li>
+          <li>The display has <code>aria-live="polite"</code> so screen readers announce results</li>
+          <li>The toggle has a visible <code>&lt;label&gt;</code> — not just a visual switch</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section aria-label="Reflection">
+      <p class="section-label">Reflection</p>
+      <div class="reflection">
+        <div class="label">💭 Reflection</div>
+        <p>
+          JavaScript is where the web comes alive. Building the calculator forced me to think about
+          state — what does the calculator "remember" between button presses?
+          The dark mode toggle taught me that CSS transitions do the heavy lifting; JS just flips a class.
+          What comes next: refactoring the calculator to use a class with proper encapsulation.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Risu Kaushal</strong> · Canvas ID: bj19nw · CET-138 Full Stack Development</p>
+  </footer>
+
+  <script src="../js/index.js"></script>
+  <script>
+    // ── Calculator logic ──
+    let calcState = { display: '0', first: null, op: null, fresh: true };
+
+    function calcUpdate() {
+      document.getElementById('calc-display').textContent = calcState.display;
+    }
+
+    function calcNum(d) {
+      if (calcState.fresh) { calcState.display = d === '.' ? '0.' : d; calcState.fresh = false; }
+      else if (d === '.' && calcState.display.includes('.')) return;
+      else if (calcState.display === '0' && d !== '.') calcState.display = d;
+      else calcState.display += d;
+      calcUpdate();
+    }
+
+    function calcOp(op) {
+      if (op === 'sign') { calcState.display = String(-parseFloat(calcState.display)); calcUpdate(); return; }
+      if (op === '%')    { calcState.display = String(parseFloat(calcState.display) / 100); calcUpdate(); return; }
+      calcState.first = parseFloat(calcState.display);
+      calcState.op    = op;
+      calcState.fresh = true;
+    }
+
+    function calcEquals() {
+      if (calcState.op === null || calcState.first === null) return;
+      const b = parseFloat(calcState.display);
+      let r;
+      switch (calcState.op) {
+        case '+': r = calcState.first + b; break;
+        case '-': r = calcState.first - b; break;
+        case '*': r = calcState.first * b; break;
+        case '/': r = b !== 0 ? calcState.first / b : 'Error'; break;
+      }
+      calcState.display = String(typeof r === 'number' ? parseFloat(r.toFixed(10)) : r);
+      calcState.first   = null;
+      calcState.op      = null;
+      calcState.fresh   = true;
+      calcUpdate();
+    }
+
+    function calcClear() {
+      calcState = { display: '0', first: null, op: null, fresh: true };
+      calcUpdate();
+    }
+
+    // ── Dark mode toggle ──
+    function toggleDark() {
+      const on = document.getElementById('dark-toggle').checked;
+      document.getElementById('dark-demo').classList.toggle('dark-on', on);
+      document.getElementById('dark-status').textContent = `Mode: ${on ? 'Dark 🌙' : 'Light ☀️'}`;
+    }
+  </script>
+</body>
+</html>

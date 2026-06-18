@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Stack — CET-138</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="nav-brand" href="index.html">Risu Kaushal</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../html/FullStack.html">Full Stack</a></li>
+        <li><a href="../html/HTML.html">HTML</a></li>
+        <li><a href="../html/CSS.html">CSS</a></li>
+        <li><a href="../html/Bootstrap.html">Bootstrap</a></li>
+        <li><a href="../html/Javascript.html">JavaScript</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <h1>Full Stack</h1>
+      <p class="subtitle">The whole picture, end to end — how the browser and server have a conversation.</p>
+    </section>
+
+    <!-- Concept -->
+    <section aria-label="Concept" style="margin-bottom:2.5rem;">
+      <p class="section-label">The Concept</p>
+      <h2 class="section-title">What does "full stack" actually mean?</h2>
+
+      <div class="cards-grid-2">
+
+        <div class="card">
+          <h2>Front End — what you see</h2>
+          <p>
+            HTML builds the structure, CSS makes it look right, and JavaScript adds interactivity.
+            The front end runs in your browser — no server needed for the rendering step.
+          </p>
+          <p>The front end's job is to present information clearly and let users interact with it without confusion.</p>
+        </div>
+
+        <div class="card">
+          <h2>Back End — what does the work</h2>
+          <p>
+            The server receives requests, applies business logic (check the user's permission,
+            query the database, format the data), and sends back a response — usually JSON.
+          </p>
+          <p>The back end never sees the page directly. It only sees the request and decides what to return.</p>
+        </div>
+
+        <div class="card">
+          <h2>Database — the memory</h2>
+          <p>
+            The database is where all application data is stored and managed securely.
+            It keeps information such as user details, passwords, and records.
+          </p>
+          <p>The backend connects to the database to retrieve or update data when needed.
+          In simple terms, it acts as the memory of the web application.</p>
+        </div>
+
+        <div class="card">
+          <h2>How they connect</h2>
+          <p>
+            A user action in the browser triggers a request (HTTP). The server processes it,
+            queries the database if needed, and returns data. The browser updates the page.
+            This cycle powers every modern web app.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Architecture diagram -->
+      <div class="card" style="margin-top:1rem;">
+        <h2>Architecture Diagram</h2>
+        <p>The three-layer request cycle visualised:</p>
+        <div class="diagram" role="img" aria-label="Browser sends request to Server which queries Database and returns response">
+          <img src="../resources/image/Image1.png" alt="Diagram showing the flow of a request from the browser to the server, then to the database, and back" style="max-width:100%; height:auto; border-radius:8px; border:1.5px solid var(--card-border);" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Live demo -->
+    <section aria-label="Live demo" style="margin-bottom:2.5rem;">
+      <p class="section-label">Live Demo</p>
+      <h2 class="section-title">Request cycle simulator</h2>
+
+      <div class="card">
+        <p>Click the button to simulate a full-stack request. Watch each layer respond in order.</p>
+        <div class="demo-box">
+          <h4> Live — runs in your browser</h4>
+          <div style="display:flex; gap:0.7rem; align-items:center; flex-wrap:wrap; margin-bottom:1rem;">
+            <input id="demo-input" type="text" placeholder="Enter a username…"
+              style="padding:0.5rem 0.9rem; border-radius:8px; border:1.5px solid var(--card-border); font-size:0.95rem; background:var(--bg); color:var(--text); flex:1; min-width:160px;"
+              aria-label="Username to look up" />
+            <button class="btn btn-primary" id="demo-btn" onclick="runDemo()">Send Request</button>
+          </div>
+          <div id="demo-log" style="font-family:var(--font-mono); font-size:0.82rem; background:#1a2f3e; color:#c8e8f7; border-radius:8px; padding:1rem; min-height:120px; white-space:pre-line;" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section aria-label="Reflection">
+      <p class="section-label">Reflection</p>
+      <div class="reflection">
+        <div class="label">💭 Reflection</div>
+        <p>
+          The hardest part of learning full stack isn't any single technology — it's understanding
+          how the layers talk. The demo above helped me see that every button click has a whole
+          journey behind it. What worked: the diagram made the data flow obvious.
+          What I'd improve next: add a real API call so the simulation uses live data.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Risu Kaushal</strong> · Canvas ID: bj19nw · CET-138 Full Stack Development</p>
+  </footer>
+
+  <script src="index.js"></script>
+  <script>
+    const steps = [
+      ['🖥️  Browser', 'User clicked "Send Request" — packaging HTTP GET /api/user/{name}'],
+      ['🌐  Network', 'Request travelling to server… (simulated 300ms latency)'],
+      ['⚙️  Server',  'Received GET /api/user/{name} — checking permissions…'],
+      ['🗄️  Database','SELECT * FROM users WHERE username = "{name}" — found 1 row'],
+      ['⚙️  Server',  'Formatting response as JSON…'],
+      ['🌐  Network', 'Response travelling back to browser…'],
+      ['🖥️  Browser', '✅ Response received: { "id": 42, "name": "{name}", "role": "student" }'],
+    ];
+
+    async function runDemo() {
+      const name = document.getElementById('demo-input').value.trim() || 'manshi';
+      const log  = document.getElementById('demo-log');
+      const btn  = document.getElementById('demo-btn');
+      log.textContent = '';
+      btn.disabled = true;
+      for (const [layer, msg] of steps) {
+        await new Promise(r => setTimeout(r, 420));
+        log.textContent += `[${layer}]  ${msg.replace(/{name}/g, name)}\n`;
+        log.scrollTop = log.scrollHeight;
+      }
+      btn.disabled = false;
+    }
+  </script>
+</body>
+</html>

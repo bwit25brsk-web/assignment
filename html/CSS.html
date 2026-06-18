@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS — CET-138</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  </head>
+ <style>
+  .demo-box .flex-demo { display:flex; gap:0.6rem; flex-wrap:wrap; }
+    .demo-box .flex-item {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .demo-box .grid-demo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    .demo-box .grid-item {
+      background: var(--accent-light);
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .anim-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      animation: spin 2s linear infinite;
+    }
+ </style>
+   <body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="nav-brand" href="../index.html">Risu Kaushal</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="FullStack.html">Full Stack</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+        <li><a href="Bootstrap.html">Bootstrap</a></li>
+        <li><a href="Javascript.html">JavaScript</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      
+      <h1>CSS</h1>
+      <p class="subtitle">Cascading Style Sheets — the language that makes the web look right.</p>
+    </section>
+
+    <!-- Concept -->
+    <section aria-label="Concept" style="margin-bottom:2.5rem;">
+      <p class="section-label">The Concept</p>
+      <h2 class="section-title">What is CSS?</h2>
+
+      <div class="cards-grid-2">
+
+        <div class="card">
+          <h2>Styling the structure</h2>
+          <p>
+            CSS (Cascading Style Sheets) controls the visual presentation of HTML. It separates
+            <em>what</em> a page contains from <em>how</em> it looks — colours, fonts, spacing,
+            layouts, and animations.
+          </p>
+          <ul>
+            <li>Selectors target HTML elements</li>
+            <li>Properties set values: <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">color: blue</code></li>
+            <li>The cascade decides which rule wins</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Flexbox</h2>
+          <p>
+            Flexbox is a one-dimensional layout model. Items in a flex container arrange along
+            a row or column, distributing space automatically and aligning with minimal code.
+          </p>
+          <pre class="code-block"><span class="attr">.container</span> {
+           <span class="kw">display</span>: flex;
+            <span class="kw">gap</span>: 1rem;
+            <span class="kw">align-items</span>: center;
+           }</pre>
+        </div>
+
+        <div class="card">
+          <h2>Grid</h2>
+          <p>
+            CSS Grid is a two-dimensional layout system — rows <em>and</em> columns at the same time.
+            It's ideal for page layouts and component grids.
+          </p>
+          <pre class="code-block"><span class="attr">.grid</span> {
+  <span class="kw">display</span>: grid;
+  <span class="kw">grid-template-columns</span>:
+    repeat(3, 1fr);
+  <span class="kw">gap</span>: 0.5rem;
+}</pre>
+        </div>
+
+        <div class="card">
+          <h2>Animations</h2>
+          <p>
+            CSS can animate properties over time using <code>@keyframes</code> and the
+            <code>animation</code> shorthand — no JavaScript needed for many effects.
+          </p>
+          <pre class="code-block"><span class="attr">@keyframes</span> spin {
+  from { <span class="kw">transform</span>: rotate(0deg); }
+  to   { <span class="kw">transform</span>: rotate(360deg); }
+}
+<span class="attr">.spinner</span> {
+  <span class="kw">animation</span>: spin 2s linear infinite;
+}</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Live demo -->
+    <section aria-label="Live demo" style="margin-bottom:2.5rem;">
+      <p class="section-label">Live Demo</p>
+      <h2 class="section-title">CSS Page Live Demo</h2>
+
+      <div class="card">
+        <div class="demo-box">
+          <h4> Live — runs in your browser</h4>
+
+          <div style="display:grid; gap:1.5rem;">
+
+            <div>
+              <p style="font-weight:700; color:var(--accent-dark); margin-bottom:0.5rem;">Flexbox row</p>
+              <div class="flex-demo">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+                <div class="flex-item">Item 4</div>
+              </div>
+            </div>
+
+            <div>
+              <p style="font-weight:700; color:var(--accent-dark); margin-bottom:0.5rem;">CSS Grid (3 columns)</p>
+              <div class="grid-demo">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">F</div>
+              </div>
+            </div>
+
+            <div>
+              <p style="font-weight:700; color:var(--accent-dark); margin-bottom:0.5rem;">CSS Animation</p>
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div class="anim-box" aria-label="Spinning circle animation">⭐</div>
+                <p style="color:var(--text-muted); font-size:0.9rem;">
+                  Spinning via <code>@keyframes spin</code>.
+                  Stops if you have <code>prefers-reduced-motion</code> enabled.
+                </p>
+              </div>
+            </div>
+
+            <!-- Live colour picker demo -->
+            <div>
+              <p style="font-weight:700; color:var(--accent-dark); margin-bottom:0.5rem;">Live colour demo</p>
+              <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+                <label style="font-size:0.88rem; font-weight:600;">
+                  Pick a colour:
+                  <input type="color" id="colour-pick" value="#1a7bbf" oninput="applyColour()"
+                    style="margin-left:0.5rem; cursor:pointer; border:none; background:none; height:2rem; width:3rem;" />
+                </label>
+                <div id="colour-box"
+                  style="width:80px; height:40px; border-radius:8px; background:#1a7bbf; transition:background 0.2s;"
+                  aria-live="polite"></div>
+                <code id="colour-value" style="font-family:var(--font-mono); font-size:0.85rem;">#1a7bbf</code>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessibility -->
+    <section aria-label="Accessibility" style="margin-bottom:2rem;">
+      <p class="section-label">Accessibility</p>
+      <div class="card">
+        <h2>♿ Accessibility decisions</h2>
+        <ul>
+          <li><code>@media (prefers-reduced-motion: reduce)</code> disables the spinning animation for users who request it</li>
+          <li>Colour contrast meets WCAG AA on all text</li>
+          <li>Focus outlines are always visible, not removed</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section aria-label="Reflection">
+      <p class="section-label">Reflection</p>
+      <div class="reflection">
+        <div class="label">💭 Reflection</div>
+        <p>
+          CSS clicked for me when I stopped memorising properties and started thinking in boxes.
+          Flexbox for one axis, Grid for two — that mental model removed most of my layout confusion.
+          The colour picker demo was a fun way to show that CSS properties can be changed with
+          a single JS assignment. Next step: CSS custom properties and dark mode.
+        </p>
+      </div>
+    </section>
+                
+  </main>
+
+  <footer>
+    <p><strong>Risu Kaushal</strong> · Canvas ID: bj19nw · CET-138 Full Stack Development</p>
+  </footer>
+
+  <script src="../js/index.js"></script>
+  <script>
+    function applyColour() {
+      const c = document.getElementById('colour-pick').value;
+      document.getElementById('colour-box').style.background = c;
+      document.getElementById('colour-value').textContent = c;
+    }
+  </script>
+</body>
+</html>

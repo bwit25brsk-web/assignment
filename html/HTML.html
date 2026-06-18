@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML — CET-138</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="nav-brand" href="../index.html">Risu Kaushal</a>
+      <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+        <li><a href="../html/FullStack.html">Full Stack</a></li>
+        <li><a href="../html/HTML.html">HTML</a></li>
+        <li><a href="../html/CSS.html">CSS</a></li>
+        <li><a href="../html/Bootstrap.html">Bootstrap</a></li>
+        <li><a href="../html/Javascript.html">JavaScript</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      
+      <h1>HTML</h1>
+      <p class="subtitle">HyperText Markup Language — the skeleton that holds every webpage together.</p>
+    </section>
+
+    <!-- Concept -->
+    <section aria-label="Concept" style="margin-bottom:2.5rem;">
+      <p class="section-label">The Concept</p>
+      <h2 class="section-title">What is HTML?</h2>
+
+      <div class="cards-grid-2">
+        <div class="card">
+          <h2>HTML is structure</h2>
+          <p>
+            HTML (HyperText Markup Language) describes the meaning and organisation of content on a page.
+            It tells the browser what each piece of content <em>is</em> — a heading, a paragraph, a link,
+            a form — not how it looks (that's CSS).
+          </p>
+          <ul>
+            <li>Tags wrap content: <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">&lt;p&gt;text&lt;/p&gt;</code></li>
+            <li>Attributes add information: <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">href=""</code>, <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">alt=""</code></li>
+            <li>Semantic tags carry meaning: <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">&lt;nav&gt;</code>, <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">&lt;article&gt;</code></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Webpage structure</h2>
+          <p>Every HTML document follows this pattern:</p>
+          <pre class="code-block"><span class="kw">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="str">"en"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="cmt">&lt;!-- metadata, title, CSS links --&gt;</span>
+    <span class="tag">&lt;title&gt;</span>My Page<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;header&gt;</span>...<span class="tag">&lt;/header&gt;</span>
+    <span class="tag">&lt;main&gt;</span>...<span class="tag">&lt;/main&gt;</span>
+    <span class="tag">&lt;footer&gt;</span>...<span class="tag">&lt;/footer&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration form -->
+    <section aria-label="Registration form" style="margin-bottom:2.5rem;">
+      <p class="section-label">Registration Form</p>
+      <h2 class="section-title">Create an account</h2>
+
+      <div class="card">
+        <p>Use this HTML-only registration form to collect student details for a course or event.</p>
+
+        <div class="demo-box">
+          <form class="registration-form" action="#" method="post">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input class="form-input" type="text" id="full-name" name="full-name" placeholder="Manshi Gyawali" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-input" type="password" id="password" name="password" placeholder="Create a password" required />
+              </div>
+
+              <div class="form-group">
+                <label for="course">Course</label>
+                <select class="form-select" id="course" name="course" required>
+                  <option value="">Choose a course</option>
+                  <option>Full Stack</option>
+                  <option>HTML</option>
+                  <option>CSS</option>
+                  <option>JavaScript</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Why are you joining?</label>
+              <textarea class="form-textarea" id="message" name="message" rows="4" placeholder="Tell us a bit about yourself..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Register</button>
+              <p class="form-note">This form uses built-in HTML validation and no JavaScript.</p>
+            </div>
+          </form>
+        </div>
+
+        <h3>Code Snippet — Form structure</h3>
+        <pre class="code-block"><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="str">"/submit"</span> <span class="attr">method</span>=<span class="str">"post"</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="str">"name"</span><span class="tag">&gt;</span>Full Name<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"text"</span> <span class="attr">id</span>=<span class="str">"name"</span> <span class="attr">name</span>=<span class="str">"name"</span>
+         <span class="attr">placeholder</span>=<span class="str">"Manshi Gyawali"</span> <span class="attr">required</span> <span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="str">"email"</span><span class="tag">&gt;</span>Email<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"email"</span> <span class="attr">id</span>=<span class="str">"email"</span> <span class="attr">name</span>=<span class="str">"email"</span>
+         <span class="attr">placeholder</span>=<span class="str">"you@example.com"</span> <span class="attr">required</span> <span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="str">"submit"</span><span class="tag">&gt;</span>Submit<span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;/form&gt;</span></pre>
+      </div>
+    </section>
+
+    <!-- Accessibility note -->
+    <section aria-label="Accessibility" style="margin-bottom:2rem;">
+      <p class="section-label">Accessibility</p>
+      <div class="card">
+        <h2>♿ Accessibility decisions</h2>
+        <ul>
+          <li>Every <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">&lt;input&gt;</code> has a paired <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">&lt;label&gt;</code> — screen readers announce the field name</li>
+          <li>The form uses <code style="background:var(--tag-bg);padding:0.1em 0.4em;border-radius:4px;">type="email"</code> so mobile keyboards show the @ key</li>
+          <li>Submit button has a visible, descriptive label — not just an icon</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section aria-label="Reflection">
+      <p class="section-label">Reflection</p>
+      <div class="reflection">
+        <div class="label">💭 Reflection</div>
+        <p>
+          HTML felt simple at first, but semantic markup — knowing when to use
+          <code>&lt;article&gt;</code> vs <code>&lt;div&gt;</code> — took real thought.
+          The live form demo made the concept click: you can see the markup update as you type.
+          What comes next: adding <code>pattern</code> validation and real error messages.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Risu Kaushal</strong> · Canvas ID: bj19nw · CET-138 Full Stack Development</p>
+  </footer>
+
+</body>
+</html>
+
